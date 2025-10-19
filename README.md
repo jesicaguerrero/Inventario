@@ -27,7 +27,7 @@ Un **Managed Bean** es una clase que el contenedor CDI administra, permitiendo i
   - `@Dependent`: Ciclo de vida atado al consumidor. Útil para validadores y utilidades.
   - `@Named`: Permite acceder al bean desde la vista con EL.
 
- <img width="990" height="990" alt="image" src="https://github.com/user-attachments/assets/974bf139-6027-4f0a-baad-2d58f4905f50" /> 
+ <img width="690" height="690" alt="image" src="https://github.com/user-attachments/assets/974bf139-6027-4f0a-baad-2d58f4905f50" /> 
 
 
 
