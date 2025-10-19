@@ -40,7 +40,23 @@ Un **Managed Bean** es una clase que el contenedor CDI administra, permitiendo i
 - La vista JSP accede a los beans mediante EL (`#{mensajeBean.textoError}`).
 
 
+##  Diagrama de Secuencia – Flujo “Crear producto”
+
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/0e56fd94-458d-489a-9a4e-17f2ffdbf891" />
+
+
+Este diagrama representa el flujo de interacción entre los componentes CDI en el proceso de creación de un producto dentro del sistema de inventario. Cada elemento está asociado a un scope específico, lo que permite una arquitectura desacoplada y clara:
+
+- **Usuario** inicia la acción desde la interfaz.
+- El **Servlet/Controlador** (`@ApplicationScoped`) recibe la solicitud y coordina el proceso.
+- Llama a la **fachada `ProductoFacade`**, también `@ApplicationScoped`, que:
+  - Utiliza **`ValidadorProducto`** (`@Dependent`) para aplicar reglas de negocio.
+  - Delega la persistencia a **`ProductoDAO`** (inyectado), que accede a la **base de datos**.
+- Una vez procesado el resultado, se actualiza el estado del bean **`MensajeBean`** (`@RequestScoped`) con mensajes informativos o de error.
+- Finalmente, la vista **JSP** muestra el contenido de `mensajeBean.textoError` o `mensajeBean.textoInfo`.
+
+Este flujo demuestra cómo los distintos scopes CDI se integran para manejar validaciones, persistencia, mensajes y presentación de forma modular y eficiente.
+
 
 
 
