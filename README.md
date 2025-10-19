@@ -26,16 +26,8 @@ Un **Managed Bean** es una clase que el contenedor CDI administra, permitiendo i
   - `@SessionScoped`: Persiste durante la sesión del usuario. Ideal para preferencias.
   - `@Dependent`: Ciclo de vida atado al consumidor. Útil para validadores y utilidades.
   - `@Named`: Permite acceder al bean desde la vista con EL.
- 
-    [Scopes CDI]
-     |
-     ├── @ApplicationScoped
-     │     └── Fachada de productos, servicios compartidos
-     ├── @RequestScoped
-     │     └── Mensajes por petición (errores, info)
-     ├── @SessionScoped
-     │     └── Preferencias del usuario (idioma, filtros)
-     └── @Dependent
-           └── Validadores y utilidades ligadas al consumidor
+
+ <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/974bf139-6027-4f0a-baad-2d58f4905f50" /> 
+
 
 
