@@ -1,3 +1,10 @@
+# Taller 1 – Refactorización del Proyecto Inventario con CDI y Managed Beans
+
+## Objetivo
+Modernizar el proyecto de inventario aplicando CDI (Contexts and Dependency Injection) y Managed Beans para mejorar el desacoplamiento, la claridad de responsabilidades y la preparación para migrar a JSF.
+
+## Investigación Previa
+
 ## ¿Qué es un Managed Bean y en qué se diferencia de un JavaBean?
 
 | Característica               | JavaBean                                                  | Managed Bean (CDI)                                              |
@@ -12,3 +19,23 @@
 **Resumen**:  
 Un **JavaBean** es una clase simple que encapsula datos sin gestión automática.  
 Un **Managed Bean** es una clase que el contenedor CDI administra, permitiendo inyección de dependencias, control de ciclo de vida y acceso desde la vista mediante EL.
+
+- **Scopes CDI**:
+  - `@ApplicationScoped`: Una instancia compartida por toda la aplicación. Ideal para servicios y fachada.
+  - `@RequestScoped`: Vive durante una petición HTTP. Útil para mensajes y errores.
+  - `@SessionScoped`: Persiste durante la sesión del usuario. Ideal para preferencias.
+  - `@Dependent`: Ciclo de vida atado al consumidor. Útil para validadores y utilidades.
+  - `@Named`: Permite acceder al bean desde la vista con EL.
+ 
+    [Scopes CDI]
+     |
+     ├── @ApplicationScoped
+     │     └── Fachada de productos, servicios compartidos
+     ├── @RequestScoped
+     │     └── Mensajes por petición (errores, info)
+     ├── @SessionScoped
+     │     └── Preferencias del usuario (idioma, filtros)
+     └── @Dependent
+           └── Validadores y utilidades ligadas al consumidor
+
+
