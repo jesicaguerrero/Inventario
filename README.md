@@ -26,8 +26,21 @@ Un **Managed Bean** es una clase que el contenedor CDI administra, permitiendo i
   - `@SessionScoped`: Persiste durante la sesión del usuario. Ideal para preferencias.
   - `@Dependent`: Ciclo de vida atado al consumidor. Útil para validadores y utilidades.
   - `@Named`: Permite acceder al bean desde la vista con EL.
+    
 
  <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/974bf139-6027-4f0a-baad-2d58f4905f50" /> 
+
+ - Un Managed Bean es gestionado por el contenedor CDI y accesible desde la vista con EL.
+- A diferencia de un JavaBean, permite inyección de dependencias y control de ciclo de vida.
+- `@ApplicationScoped` se usa en la fachada para compartir una instancia en toda la aplicación.
+- `@RequestScoped` se aplica en `MensajeBean` para manejar mensajes por petición.
+- `@SessionScoped` se usa en `PreferenciasBean` para guardar idioma y filtros del usuario.
+- `@Dependent` se aplica en `ValidadorProducto` para validar datos de forma reutilizable.
+- Se usa `@Inject` para desacoplar la creación de DAO y otros beans.
+- La vista JSP accede a los beans mediante EL (`#{mensajeBean.textoError}`).
+
+
+ 
 
 
 
