@@ -40,8 +40,9 @@ Un **Managed Bean** es una clase que el contenedor CDI administra, permitiendo i
 - La vista JSP accede a los beans mediante EL (`#{mensajeBean.textoError}`).
 
 
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/0e56fd94-458d-489a-9a4e-17f2ffdbf891" />
 
-![Diagrama de Secuencia – Crear producto](ruta/de/la/imagen.png)
+
 
 
 
